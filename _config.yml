@@ -1,0 +1,376 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Moscow - Personal Portfolio
+email: support@ducor.net
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://moscow-jekyll-theme.demos.ducor.net" # the base hostname & protocol for your site, e.g. http://example.com
+
+# jekyll paginate
+# Outputting
+permalink: /blog/:categories/:title/
+paginate: 3 # amount of posts to show
+paginate_path: /blog/page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+#plugin
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: jekyll-archives
+  path: /blog/categories/
+tag_archive:
+  type: jekyll-archives
+  path: /blog/tags/
+# https://github.com/jekyll/jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive
+    tag: archive
+#    year: year-archive
+  permalinks:
+    category: /blog/categories/:name/
+    tag: /blog/tags/:name/
+#    year: '/blog/archives/year/:year/'
+    
+
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+
+# dont change this line
+defaults: #https://jekyllrb.com/docs/configuration/front-matter-defaults/
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      pageClass: blog
+      postSearch: true
+#version
+version: dark
+# favicon
+favicon: /images/favicon.ico
+
+#Disqus is a global comment system
+disqus_shortname: moscow-jekyll-theme #https://disqus.com/
+
+#analytics
+google_analytics: #https://analytics.google.com/
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - bin/
+  - docs/
+  - gulpfile.js
+  - package-lock.json
+  - package.json
+
+#########################################################################################
+############################ template content/sections ######################################
+#########################################################################################
+
+#home
+topleft:
+  wellcome: "Hi There ! I'm"
+  my-name: "Linda Smith"
+  description: '<b class="is-visible">web designer</b> <b>developer</b><b>blogger</b>'
+#about
+about:
+  section-title: 'About'
+  section-tagline: 'me'
+  personal-infos: personal infos
+  description: "I'm a Freelance Web Designer & Developer based in Moscow, Russia.
+                        I have serious passion for UI effects, animations and creating intuitive, 
+                        with over a decade of experience."
+  first-name: Lucy
+  last-name : Smith
+  date-of-birth : 21 june 1990
+  nationality : Russian
+  freelance : Available
+  address : 'Moscow, Russia'
+  phone : '+34 21 18 40 10'
+  email : you@yourwebsite.com
+  skype : linda.smith
+  langages : French - German
+  #download cv link
+  cv-download-text: 'Download CV'
+  cv-download-link: "#"
+  
+  #Boxes Starts
+  boxesStarts:
+    - count:  4 
+      description: 'Years Experience'
+      icon:  fa fa-briefcase
+    - count: 89
+      description: 'DONE PROJECTS' 
+      icon: fa fa-handshake-o
+    - count: 77
+      description: 'HAPPY CUSTOMERS' 
+      icon: fa fa-heart-o
+    
+
+#+
+experience-title: Experience
+#+
+education-title: Education
+#+
+skills-title: Skills
+
+#  EXPERIENCE & EDUCATION & skill
+experience:
+  - date:  2015 - 2018
+    title: '<span>Web Designer - </span>Envato'
+    description: Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit
+
+  - date:  2011 - 2015
+    title: '<span>Web Developer - </span>Google'
+    description: Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt
+  
+  - date:  2007 - 2011
+    title: '<span>Community Manager - </span>Adobe'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+
+education:
+  - date: 2015 - 2018
+    title: '<span>Engineering Diploma - </span>Oxford University'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+  - date:  2011 - 2015
+    title: '<span>Masters Degree - </span>Paris University'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+  - date: 2007 - 2011
+    title: 'Bachelor Degree - </span>Berlin Higher Institute'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+
+skills:
+  - name:  HTML
+    star: 5
+  - name: JAVASCRIPT
+    star: 4.5
+  - name: CSS 
+    star: 4.5
+  - name: PHP 
+    star: 3
+  - name: JQUERY 
+    star: 5
+  - name: ANGULAR JS 
+    star: 3
+  - name: WORDPRESS 
+    star: 4.5
+  - name: JOOMLA
+    star: 3.5
+  - name: MAGENTO
+    star: 4
+  - name: DRUPAL
+    star: 5
+  - name: ADOBE PHOTOSHOP
+    star: 4
+  - name: ADOBE ILLUSTRATOR
+    star: 3.5
+
+# portfolio
+portfolios:
+  - title: Image Project
+    type: 'image'
+    image:  images/projects/project-1.jpg
+    project : Website
+    technologies: PHP, HTML, CSS, JAVASCRIPT
+    client : Envato
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: YOUTUBE PROJECT
+    type: youtube
+    image:  images/projects/project-2.jpg
+    url:  https://www.youtube.com/embed/7e90gBu4pas?enablejsapi=1&version=3&playerapiid=ytplayer
+    project : Video
+    technologies: ADOBE AFTER EFFECTS, ADOBE AUDITION
+    client : Videohive
+    preview : www.videohive.net
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  images/projects/project-3.jpg
+    project : Video
+    technologies: ADOBE PHOTOSHOP, GIMP
+    client : Themeforest
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: LOCAL VIDEO PROJECT
+    type: video
+    image:  images/projects/project-4.jpg
+    url:  images/projects/video/video.mp4
+    project : Video
+    technologies: ADOBE FLASH, PAINT
+    client : Videohive
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  images/projects/project-5.jpg
+    project : Website
+    technologies:  3DS MAX, ADOBE PHOTOSHOP
+    client :  Envato
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  images/projects/project-6.jpg
+    project : Website
+    technologies: ADOBE AUDITION, ADOBE PREMIERE
+    client :  Envato
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  images/projects/project-7.jpg
+    project : Website
+    technologies: ADOBE AUDITION, ADOBE PREMIERE
+    client :  Envato
+    preview : www.envato.com
+    start_date:  02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  images/projects/project-8.jpg
+    project : Website
+    technologies: PHP, HTML, CSS, JAVASCRIPT
+    client :  Envato
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+  - title: IMAGE PROJECT
+    type: image
+    image: images/projects/project-9.jpg
+    project : Website
+    technologies: ADOBE AUDITION, ADOBE PREMIERE
+    client :  Envato
+    preview : www.envato.com
+    start_date: 02/11/2017
+    end_date: 02/08/2018
+
+
+#contact page
+contract:
+  page-title: '<span data-hover="get">get </span><span data-hover="in touch">in touch</span>>'
+  info: "Feel free to drop me a line"
+  description: "If you have any suggestion, project or even you want to say Hello.. Please fill out the form below and I will reply you shortly."
+
+#+ socials
+socials:
+  phone:
+    name: Phone
+    icon: 'fa fa-phone'
+    value: '+34 62 11 84 01'
+  email:
+    name: Email
+    icon: 'fa fa-envelope'
+    value: ' you@youwebsite.com'
+  skype:
+    name: Skype
+    icon: 'fa fa-skype'
+    value: 'linda.smith'
+  address:
+    name: Address
+    icon: 'fa fa-home'
+    value: 'Moscow, Russia'
+  facebook:
+    name: Facebook
+    icon: 'fa fa-facebook'
+    value: '#'
+    class: 'facebook'
+  twitter:
+    name: Twitter
+    icon: 'fa fa-twitter'
+    value: '#'
+    class: 'twitter'
+  google:
+    name: Google
+    icon: 'fa fa-google-plus'
+    value: '#'
+    class: 'google-plus'
+  linkedin:
+    name: linkedin
+    icon: 'fa fa-linkedin'
+    value: '#'
+    class: 'linkedin'
+
+
